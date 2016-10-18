@@ -2,11 +2,6 @@ from clang.cindex import Index
 from clang.cindex import Config
 import json
 
-ast = {}
-
-index = Index.create()
-source = index.parse('test.c')
-
 def get_node_info(node):
 	return {
 		"name":node.spelling,
@@ -24,7 +19,8 @@ def main():
 	index = Index.create()
 	source = index.parse('test.c')
 	ast = get_node_info(source.cursor)
-	print ast	
+	ast_json = json.dump(ast)
+	print ast_json >> 'test.json'
 
 if __name__ == '__main__':
 	main()
