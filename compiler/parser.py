@@ -14,13 +14,15 @@ def get_node_info(node):
 		"child":[get_node_info(child) for child in node.get_children()]
 	}
 
+def parse()
+
 def main():
 	ast = {}
 	index = Index.create()
 	source = index.parse('test.c')
 	ast = get_node_info(source.cursor)
-	ast_json = json.dump(ast)
-	print ast_json >> 'test.json'
+	ast_json = json.dumps(ast)
+	print >> open('test.json','w') ,ast_json
 
 if __name__ == '__main__':
 	main()
