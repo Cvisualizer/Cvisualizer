@@ -8,5 +8,5 @@ int main(){
 	int c = 30;
 	int *p = &b;
 	*(p+1) = 11;
-	return b
+	return a
 }
