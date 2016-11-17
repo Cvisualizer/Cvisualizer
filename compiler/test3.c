@@ -1,7 +1,8 @@
 int main(){
-	int a = 0;
-	for(int i=0;i<100;i++){
-		a = a + i;
-	}
-	return a
+	int a = 10;
+	int b = 20;
+	int c = 30;
+	int *p = &b;
+	*(p-1) = 11;
+	return b
 }
